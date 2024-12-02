@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <!-- Output type set to WinExe for a Windows executable -->
+    <OutputType>WinExe</OutputType>
+
+    <!-- Targeting .NET 8.0 for Windows -->
+    <TargetFramework>net8.0-windows</TargetFramework>
+
+    <!-- Enabling Windows Forms -->
+    <UseWindowsForms>true</UseWindowsForms>
+
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+
+    <!-- Disabling WPF (not needed for this project) -->
+    <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
+    <UseWPF>false</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Including the main source file -->
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Adding System.Drawing.Common for GDI+ and image manipulation -->
+    <PackageReference Include="System.Drawing.Common" Version="9.0.0" />
+  </ItemGroup>
+</Project>
