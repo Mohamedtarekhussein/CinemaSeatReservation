@@ -1,0 +1,84 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/mahmoudahmed/Desktop/Uni/L4-S1/pl3/PL3/PROJECT/cinema_seat_reservation/cinema_seat_reservation.fsproj": {}
+  },
+  "projects": {
+    "/Users/mahmoudahmed/Desktop/Uni/L4-S1/pl3/PL3/PROJECT/cinema_seat_reservation/cinema_seat_reservation.fsproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/mahmoudahmed/Desktop/Uni/L4-S1/pl3/PL3/PROJECT/cinema_seat_reservation/cinema_seat_reservation.fsproj",
+        "projectName": "cinema_seat_reservation",
+        "projectPath": "/Users/mahmoudahmed/Desktop/Uni/L4-S1/pl3/PL3/PROJECT/cinema_seat_reservation/cinema_seat_reservation.fsproj",
+        "packagesPath": "/Users/mahmoudahmed/.nuget/packages/",
+        "outputPath": "/Users/mahmoudahmed/Desktop/Uni/L4-S1/pl3/PL3/PROJECT/cinema_seat_reservation/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/mahmoudahmed/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/sdk/8.0.403/FSharp/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0-windows7.0": {
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "FSharp.Core": {
+              "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
+              "target": "Package",
+              "version": "[8.0.401, )",
+              "generatePathProperty": true
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[9.0.0, )",
+              "generatePathProperty": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.10, 8.0.10]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

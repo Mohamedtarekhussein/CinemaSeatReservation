@@ -6,11 +6,12 @@
 
     <!-- Targeting .NET 8.0 for Windows -->
     <TargetFramework>net8.0-windows</TargetFramework>
-
+    
     <!-- Enabling Windows Forms -->
     <UseWindowsForms>true</UseWindowsForms>
 
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
 
     <!-- Disabling WPF (not needed for this project) -->
     <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>

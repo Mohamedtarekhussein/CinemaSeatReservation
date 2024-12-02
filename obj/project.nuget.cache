@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "xbUlS/9Xnzo=",
+  "success": true,
+  "projectFilePath": "/Users/mahmoudahmed/Desktop/Uni/L4-S1/pl3/PL3/PROJECT/cinema_seat_reservation/cinema_seat_reservation.fsproj",
+  "expectedPackageFiles": [
+    "/Users/mahmoudahmed/.nuget/packages/fsharp.core/8.0.401/fsharp.core.8.0.401.nupkg.sha512",
+    "/Users/mahmoudahmed/.nuget/packages/microsoft.win32.systemevents/9.0.0/microsoft.win32.systemevents.9.0.0.nupkg.sha512",
+    "/Users/mahmoudahmed/.nuget/packages/system.drawing.common/9.0.0/system.drawing.common.9.0.0.nupkg.sha512",
+    "/Users/mahmoudahmed/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.10/microsoft.windowsdesktop.app.ref.8.0.10.nupkg.sha512"
+  ],
+  "logs": []
+}

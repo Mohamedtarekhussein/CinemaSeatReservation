@@ -65,7 +65,7 @@ module CinemaHallOperations =
 type CinemaReservationForm() as this =
     inherit Form()
     // Configurable hall dimensions
-    let rows = 10
+    let rows = 8
     let columns = 10
     // Mutable state for tracking hall and booked tickets
     let mutable cinemaHall = CinemaHallOperations.createCinemaHall rows columns
@@ -75,27 +75,52 @@ type CinemaReservationForm() as this =
     let customerNameInput = new TextBox()
     let bookButton = new Button()
     let ticketListBox = new ListBox()
+    let screenLabel = new Label()
+
     // Create seat buttons dynamically
     let createSeatButtons() =
         seatPanel.SuspendLayout()
         // Clear existing buttons
         seatPanel.Controls.Clear()
+
+        // Create a movie screen area
+        screenLabel.Text <- "Movie Screen"
+        screenLabel.Font <- new Font("Arial", 16.0f, FontStyle.Bold)
+        screenLabel.TextAlign <- ContentAlignment.MiddleCenter
+        screenLabel.Size <- Size(450, 40)
+        screenLabel.Location <- Point(20, (rows * 45) + 20)
+        screenLabel.BackColor <- Color.Gray
+        screenLabel.ForeColor <- Color.White
+        seatPanel.Controls.Add(screenLabel)
+        let mutable seatNumber = 1
+
+
         // Create buttons for each seat
         for row in 0 .. rows - 1 do
             for col in 0 .. columns - 1 do
-                let seatButton = new Button()
-                seatButton.Size <- Size(40, 40)
-                seatButton.Location <- Point(col * 45, row * 45)
-                // Use pattern matching to set button color
-                match cinemaHall.Seats.[row, col].Status with
-                | Available -> seatButton.BackColor <- Color.Green
-                | Reserved -> seatButton.BackColor <- Color.Red
-                // Add click event
-                seatButton.Click.Add(fun _ -> 
-                    customerNameInput.Focus() |> ignore
-                    bookButton.Tag <- (row, col)
-                )
-                seatPanel.Controls.Add(seatButton)
+                // Skip area where the screen would be
+                if row < 5 then 
+                    let seatButton = new Button()
+                    seatButton.Size <- Size(40, 40)
+                    seatButton.Location <- Point(col * 45, row * 45)
+
+                    // Use pattern matching to set button color
+                    match cinemaHall.Seats.[row, col].Status with
+                    | Available -> seatButton.BackColor <- Color.Green
+                    | Reserved -> seatButton.BackColor <- Color.Red
+
+                    // Add seat number on the button
+                    seatButton.Text <- sprintf "%d" seatNumber 
+                    seatButton.Font <- new Font("Arial", 8.0f, FontStyle.Bold)
+                    seatButton.TextAlign <- ContentAlignment.MiddleCenter
+
+                    // Add click event
+                    seatButton.Click.Add(fun _ -> 
+                        customerNameInput.Focus() |> ignore
+                        bookButton.Tag <- (row, col)
+                    )
+                    seatPanel.Controls.Add(seatButton)
+                    seatNumber <- seatNumber + 1
         seatPanel.ResumeLayout()
 
     // Book seat button click handler
@@ -109,7 +134,7 @@ type CinemaReservationForm() as this =
             else
                 // Get selected seat coordinates
                 match bookButton.Tag with
-                | :? (int * int) as (row, col) ->
+                | :? (int * int) as (row, col) -> 
                     // Use functional approach to book seat
                     match CinemaHallOperations.bookSeat cinemaHall row col customerName DateTime.Now with
                     | Some(updatedHall, ticket) ->
@@ -125,7 +150,7 @@ type CinemaReservationForm() as this =
                         ) |> ignore
                         // Clear input
                         customerNameInput.Clear()
-                    | None ->
+                    | None -> 
                         MessageBox.Show("Seat is already reserved!") |> ignore
                 | _ -> 
                     MessageBox.Show("Please select a seat first!") |> ignore
@@ -135,7 +160,7 @@ type CinemaReservationForm() as this =
     do
         // Form setup
         this.Text <- "Cinema Seat Reservation"
-        this.Size <- Size(600, 500)
+        this.Size <- Size(600, 600)
         // Seat Panel
         seatPanel.Location <- Point(20, 20)
         seatPanel.Size <- Size(450, 450)

@@ -1,0 +1,2 @@
+c:\Users\MBR\Downloads\PL3 PROJECT\cinema_seat_reservation\obj\Debug\net8.0\cinema_seat_reservation.AssemblyInfoInputs.cache
+c:\Users\MBR\Downloads\PL3 PROJECT\cinema_seat_reservation\obj\Debug\net8.0\cinema_seat_reservation.AssemblyInfo.fs
