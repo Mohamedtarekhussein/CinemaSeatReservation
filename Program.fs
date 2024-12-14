@@ -1,4 +1,4 @@
-﻿open System
+open System
 open System.Windows.Forms
 open System.Drawing
 
@@ -28,7 +28,7 @@ type CinemaHall = {
 }
 
 module CinemaHallOperations =
-    // Pure function to create initial cinema hall
+    // Pure function to create initial cinema hall .
     let createCinemaHall rows columns : CinemaHall =
         let seats = 
             Array2D.init rows columns (fun row col -> 
